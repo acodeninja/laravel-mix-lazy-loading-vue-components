@@ -11,5 +11,14 @@ let mix = require('laravel-mix');
  |
  */
 
+/**
+ * Override Laravel Mix Webpack Configuration
+ * @type {{chunkFilename: string, publicPath: string}}
+ */
+mix.config.webpackConfig.output = {
+    chunkFilename: 'js/[name].bundle.js',
+    publicPath: '/',
+};
+
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
